@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+
 #define LINE_MAX 100
 
 void reverse(char line[]);
