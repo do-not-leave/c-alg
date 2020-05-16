@@ -12,4 +12,4 @@ C语言程序设计&amp;算法基础
     例：2020-05-15，itcode为xxx的《c语言程序设计》作业放到 c -> 2020-05-15 -> xxx 下面
 
 # vscode编辑器
-    macOS Catalina系统vscode C开发环境配置可参考 [mac vscode搭建c语言开发环境](https://blog.csdn.net/AIkiller/article/details/106160628)
+- macOS Catalina系统vscode C开发环境配置可参考 [mac vscode搭建c语言开发环境](https://blog.csdn.net/AIkiller/article/details/106160628)
