@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 #define LINE_MAX 100
 
@@ -9,18 +10,18 @@ int main() {
     char line[LINE_MAX];
 
     while (getLine(line, LINE_MAX) != 0) {
-        printf("原字符串: %s\n", line);
+        printf("origin string: %s\n", line);
         reverse(line);
-        printf("反转字符串: %s\n\n", line);
+        printf("reverse string: %s\n\n", line);
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 int getLine(char line[], int maxLen) {
     char c;
     int strLen = 0;
-    printf("输入字符串: ");
+    printf("input: ");
     while ((c = getchar()) != EOF) {
         if (c == '\n'){
             line[strLen] = '\0';
