@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 #define LINE_MAX 100
 
 int getLine(char line[], int maxLine);
@@ -48,4 +49,7 @@ void reverse(char line[]) {
         i++;
         j--;
     }
+    printf("%d\n", j);
+    
+    printf("反转字符串:%s\n", line);
 }
