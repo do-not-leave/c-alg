@@ -1,57 +1,24 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
+#include <stdlib.h>
 
-int num(char t)
-{
-    int res;
-    if(t=='a' || t=='A')
-        res = 10;
-    
-    if(t=='b' || t=='B')
-        res = 11;
-    
-    if(t=='c' || t=='C')
-        res = 12;
-    
-    if(t=='d' || t=='D')
-        res = 13;
-    
-    if(t=='e' || t=='E')
-        res = 14;
-    
-    if(t=='f' || t=='F')
-        res = 15;
-    
-    return res;
-}
-
-int atoi(char s[])
+int htoi(char s[])
 {
     int i;
     int n;
-    double resp = 0;
-    int tab;
-    int number;
+    int resp;
 
     n = strlen(s);
-    // n = 0;
-    for ( i = 0; i< n ; i++)
+    resp = 0;
+    for ( i = 2; i< n ; i++)
     {
-        if(i=0 && s[i]!='0')
-            resp = 0;
-        if(i=1 && s[i]!='x' || s[i]!='X')
-            resp = 0;
-        if(i > 1){
-            tab = n-(i+1);
-            if(s[i]>'0' && s[i]<'9'){
-                resp = resp + s[i] * pow(16,tab);
-            }else{
-                number = num(s[i]);
-                resp = resp + number * pow(16,tab);
-            }
+        if(s[i]>='0' && s[i]<='9'){
+            resp = 16 * resp + (s[i]-'0');
+        }else if(s[i]>='a' && s[i]<='f'){
+            resp = 16 * resp + (s[i]-'a' + 10);
+        }else if(s[i]>='A' && s[i]<='F'){
+            resp = 16 * resp + (s[i]-'A' + 10);
         }
-
     }
         
     return resp;    
@@ -59,9 +26,14 @@ int atoi(char s[])
 
 int main ()
 {
-   char str[] = "0x1f";
+   char str[10];
    int res;
-   res = atoi(str);
+   gets(str);
+   if (str[0] != '0' || (str[1] != 'x' && str[1] != 'X')){
+        printf("must 16 jin zhi\n");
+        exit(1);
+    }
+   res = htoi(str);
    printf("res:%d",res);
 }
 
