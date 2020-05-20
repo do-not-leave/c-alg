@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
 int htoi(char *s);
 
 int main(){
@@ -18,12 +19,12 @@ int htoi(char *s){
     int total = 0;
     if(len < 3){
         printf("至少三位！\n");
-        return 0;
+        exit(1);
     }
 
     if (s[0] != '0' || (s[1] != 'x' && s[1] != 'X')){
         printf("开头必须是0x或是0X！\n");
-        return 0;
+        exit(1);
     }
 
     for (int i = len - 1; i > 1; i--){
@@ -36,7 +37,7 @@ int htoi(char *s){
             temp = (s[i] - 'A' + 10) * pow(16 , mi);
         }else{
             printf("第%d位是%c,不合法！\n",mi + 1,s[i]);
-            return 0;
+            exit(1);
         }
         total += temp;
         printf("i:%d|s[i]:%c|mi:%d|temp:%i|total:%d\n",i,s[i],mi,temp,total);
