@@ -68,7 +68,7 @@ void getChar(int s[], int l) {
 }
 
 
-void main() {
+int main() {
     int s[100];
     int l = 0;
     int c;
@@ -146,4 +146,5 @@ void main() {
     }
 
     printf("退出\n");
+    return 0;
 }
