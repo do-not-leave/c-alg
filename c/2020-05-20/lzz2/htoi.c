@@ -3,25 +3,24 @@
 #include<string.h>
 #include<math.h>
 
-int htoi(char s[])
+
+int atoi(char s[]);
+
+int atoi(char s[])
 {
-    int len = strlen(s);
-    int sum = 0;
-    int i;
-    for (i = 2; i < len; i++)
+    int i,n;
+    n = 0; 
+    for (i = 0; s[i] >= "0" && s[i] <= '9'; ++i)
     {
-        if (s[i] >= 'A' && s[i] <= 'F')
-        {
-            s[i] = s[i] - 'A' + 10 + '0';
-        }
-        sum += (s[i] - '0') * (pow(16.0, len - 1 - i));
+      n = 10*n + (s[i] - '0');
     }
-    return sum;
+    return n;
 }
 
 int main()
 {
-    char s[10];
-    scanf("%s", s);
-    printf("%d\n", htoi(s));
+	char s[100];
+	scanf(s,'123123');
+	printf(s);
+    printf(atoi(s));
 }
