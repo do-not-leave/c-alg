@@ -4,8 +4,9 @@ int bitCount(unsigned x)
 {
     int b = 0;
     for (; x != 0; b++) {
-        printf("%d\n", b);
+        printf("%d, %d\n", b, x);
         x &= (x-1);
+        printf("%d, %d\n", b, x);
     }
 
     return b;
