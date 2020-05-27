@@ -19,37 +19,37 @@ void escape(char * s,char * t)
         switch (t[i])
         {
             case '\a':
-                s[j] = '\\';
-                s[j+1] = 'a';
+                s[j++] = '\\';
+                s[j] = 'a';
                 break;
 
             case '\b':
-                s[j] = '\\';
-                s[j+1] = 'b';
+                s[j++] = '\\';
+                s[j] = 'b';
                 break;
             case '\f':
-                s[j] = '\\';
-                s[j+1] = 'f';
+                s[j++] = '\\';
+                s[j] = 'f';
                 break;
 
             case '\n':
-                s[j] = '\\';
-                s[j+1] = 'n';
+                s[j++] = '\\';
+                s[j] = 'n';
                 break;
 
             case '\r':
-                s[j] = '\\';
-                s[j+1] = 'r';
+                s[j++] = '\\';
+                s[j] = 'r';
                 break;            
 
             case '\t':
-                s[j] = '\\';
-                s[j+1] = 't';
+                s[j++] = '\\';
+                s[j] = 't';
                 break;
 
             case '\v':
-                s[j] = '\\';
-                s[j+1] = 'v';
+                s[j++] = '\\';
+                s[j] = 'v';
                 break;            
         
             default:
