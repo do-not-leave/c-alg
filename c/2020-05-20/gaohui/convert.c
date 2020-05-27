@@ -16,7 +16,7 @@ int htoi2(char s[]){
  	n =0;
  	inhex = YES;
  	for(;inhex==YES; ++i){
- 		if(s[i] >= '0' && s[i]<=9){
+ 		if(s[i] >= '0' && s[i]<='9'){
  			hex = s[i] - '0';
  		}else if(s[i]>='a' && s[i]<='f'){
  			hex = s[i] - 'a' +10;
@@ -34,7 +34,7 @@ int htoi2(char s[]){
 
 
 int main() {
-	char s[] = "0xfff23";
+	char s[] = {"0xfff23"};
 	printf("%d\n",htoi2(s));
 	return 0;
 }
