@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * 整数n转换成b进制的字符串s，b只能为2~10，16
@@ -28,6 +29,7 @@ int main ()
 void itoblt10(int n, char *s, int b) {
     if (b >10 || b<0) {
         printf("进制错误，必须大于0，不大于10");
+        return;
     }
     int i, sign;
     if ((sign = n) < 0)
