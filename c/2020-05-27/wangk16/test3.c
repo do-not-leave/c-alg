@@ -2,8 +2,8 @@
 
 void escape(char * s, char * t);
 
-char main(){
-    char t[20] = "H\nello";
+int main(){
+    char t[20] = "H\\\nello";
     char s[20];
     printf("in string:\n%s\n",t);
     escape(s,t);
