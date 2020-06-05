@@ -6,6 +6,7 @@ void buble_sort(int arr[], int length)
     int i, j, max;
     for(i=0;i<length-1;i++)
     {
+        int t = 1;
         for(j=0;j<length-i-1;j++)
         {
             if(arr[j] > arr[j+1])
@@ -13,8 +14,17 @@ void buble_sort(int arr[], int length)
                 max = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = max; 
+                t = 0;
             }
         }
+        if(t){
+            break;
+        }
+        for(int k=0; k<10; k++){
+            printf("%d  ", arr[k]);
+        }
+        printf("\n");
+            
     }
 }
 
