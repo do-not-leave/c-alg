@@ -22,8 +22,9 @@ int main(void)
 
     ungets(line);
 
-    while((c=getch()) != EOF)
+    while((c=getch()) != EOF) {
         putchar(c);
+    }  
     
     return 0;
 }
@@ -32,12 +33,14 @@ int mgetline(char s[],int lim)
 {
     int i,c;
     
-    for(i=0;i<lim-1 && (c=getchar())!=EOF && c!='\n';++i)
+    for(i=0;i<lim-1 && (c=getchar())!=EOF && c!='\n';++i) {
         s[i]=c;
+    } 
 
-    if(c=='\n')
+    if(c=='\n') {
         s[i++]=c;
-
+    }
+        
     s[i]='\0';
 }
 
@@ -47,17 +50,19 @@ void ungets(char s[])
     
     i = strlen(s);
 
-
-    while(i>0)
+    while(i>0) {
         ungetch(s[--i]);
+    }
 }
 
 void ungetch(int c)
 {
-    if(bufp >= MAXBUF)
+    if (bufp >= MAXBUF) {
         printf("ungetch: too many characters\n");
-    else
+    } else {
         buf[bufp++]=c;
+    }
+      
 }
 
 int getch(void)
