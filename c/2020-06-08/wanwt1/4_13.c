@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void reverse(char s[])
-{
-    void reverser(char s[],int i,int len);
-
-    reverser(s,0,strlen(s));
-}
-
-void reverser(char s[],int i,int len)
+void reverse(char s[],int i,int len)
 {
     int c,j;
 
@@ -20,7 +13,7 @@ void reverser(char s[],int i,int len)
         s[i] = s[j];
         s[j] = c;
 
-        reverser(s,++i,len);
+        reverse(s,++i,len);
     }
 }
 
@@ -28,7 +21,7 @@ int main()
 {
     char s[] = "1234567";
     printf("%s\n",s);
-    reverse(s);
+    reverse(s,0,strlen(s));
     printf("%s\n",s);
 }
 
