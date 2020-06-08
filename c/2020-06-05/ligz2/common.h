@@ -1,0 +1,2 @@
+int geta();
+char getb();
