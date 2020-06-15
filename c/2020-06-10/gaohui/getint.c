@@ -17,7 +17,7 @@ int main(void)
 	printf("输入字符串\n");
 	int i= 0;
 	getfloat(&number);
-	printf("浮点数取双精度：%.2f\n", number);
+	printf("浮点数取双精度：%f\n", number);
 }
 
 int getfloat(float *pn)
