@@ -2,7 +2,7 @@
 
 
 int findZero(int a[],int num);
-
+int moveZero(int a[],int num);
 
 int main(){
 	
