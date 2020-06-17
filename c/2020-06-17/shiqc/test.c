@@ -9,7 +9,7 @@ int main()
     msg[3] = 'q';
     printf("%s\n",msg);
     printf("%s",pmsg);
-    pmsg[3] = 'q'; // 错误（Segment Fault）
+    // pmsg[3] = 'q'; // 错误（Segment Fault）
     return 0;
 }
 
