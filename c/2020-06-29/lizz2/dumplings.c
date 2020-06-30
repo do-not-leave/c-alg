@@ -51,6 +51,7 @@ main(int argc,char *argv[])
 	     first +=LINES;    
 	for(i = first;n-->0;i=(i+1)%LINES)
 	    printf("%s",lineptr[i]);
+	    
 	return 0;			         
 }
 
