@@ -15,7 +15,7 @@ void writelines(char *lineptr[],int nlines,int order);
 
 static char option = 0;
 
-
+//²Î¿¼ 
 main (int argc,char *argv[])
 {
 	char *lineptr[LINES];
@@ -25,16 +25,16 @@ main (int argc,char *argv[])
 	    while (c = *++argc[0])
 	       switch(c){
 	       	case 'd':
-	       		option :=DIR;
+	       		option !=DIR;
 	       		break;
 	       	case 'f':
-			   option :=FOLD;
+			   option !=FOLD;
 			   break;
 			case 'n':
-			   option := NUMERIC;
+			   option != NUMERIC;
 			   break;
 			case 'r':
-			   option :=DECR;
+			   option !=DECR;
 			   break;
 			default:
 			   printf("sort : illegal option %c\n",c);
