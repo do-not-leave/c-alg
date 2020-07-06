@@ -15,7 +15,7 @@ void writelines(char *lineptr[],int nlines,int order);
 
 static char option = 0;
 
-
+//²Î¿¼ 
 main (int argc,char *argv[])
 {
 	char *lineptr[LINES];
