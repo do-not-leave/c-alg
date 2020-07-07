@@ -44,6 +44,7 @@ int GetInt(struct ValueObject *v) {
     return *(int *)(v->value);
 }
 
+//构造链表节点
 struct LinkNode *NewLinkNode() {
     struct LinkNode *p;
 
@@ -53,6 +54,7 @@ struct LinkNode *NewLinkNode() {
     return p;
 }
 
+//构造单链表
 struct SingleLink *NewSingleLink() {
     struct SingleLink *p;
     struct LinkNode *node;
@@ -65,6 +67,8 @@ struct SingleLink *NewSingleLink() {
     return p;
 }
 
+
+//链表添加节点
 int Insert(struct SingleLink *link, int index, int value) {
     struct ValueObject *v;
     struct LinkNode *node, *current;
@@ -148,17 +152,23 @@ int main() {
 
     struct SingleLink *link;
 
+    //构造链表
     link = NewSingleLink();
 
+    //链表中插入节点
     for (int i = 0; i < 7; i++) {
         Insert(link, i, data[i]);
     }
     
+    //遍历输出链表
     TraverseLink(link);
 
     printf("\n");
+
+    //反转链表
     ReverseLink(link);
 
+    //遍历输出链表
     TraverseLink(link);
 
     return EXIT_SUCCESS;
