@@ -18,7 +18,6 @@ void createNode(struct LinkNode *node,int n){
         cur->val = i;
         cur->next = NewLinkNode();// 创建新的节点
         cur = cur->next;
-        // printf("%p, ", cur);
     }
 }
 
@@ -32,11 +31,6 @@ int main() {
 
 //构造链表节点
 struct LinkNode *NewLinkNode() {
-    // struct LinkNode r,*p=&r;
-    // p->val = 10000;
-    // p->next = NULL;
-    // return p;
-
     struct LinkNode *p;
     p = (struct LinkNode*)malloc(sizeof(struct LinkNode));
     p->val = 10000;
