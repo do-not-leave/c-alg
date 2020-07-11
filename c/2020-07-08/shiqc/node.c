@@ -15,40 +15,41 @@ void createNode(struct LinkNode *node,int n){
     cur = node;
     for (int i = 1; i <= n; i++)
     {
-        cur->next = NewLinkNode();
         cur->val = i;
-        printf("%d, ", cur->val);
+        cur->next = NewLinkNode();// 创建新的节点
         cur = cur->next;
-        printf("%d, ", cur->val);
+        // printf("%p, ", cur);
     }
-    
 }
 
 
 int main() {
     struct LinkNode node;
-    node.val = -1;
-    node.next = NULL;
-    createNode(&node,1);
+    createNode(&node,8);
     PrintNode(&node);
     return EXIT_SUCCESS;
 }
 
 //构造链表节点
-struct LinkNode *NewLinkNode(int n) {
-    struct LinkNode r, *p = &r;
-    p->val = 1000000;
+struct LinkNode *NewLinkNode() {
+    // struct LinkNode r,*p=&r;
+    // p->val = 10000;
+    // p->next = NULL;
+    // return p;
+
+    struct LinkNode *p;
+    p = (struct LinkNode*)malloc(sizeof(struct LinkNode));
+    p->val = 10000;
     p->next = NULL;
     return p;
 }
 
 // 打印链表
 void PrintNode(struct LinkNode *node) {
-    printf("%d, ", node->next->val);
-    // struct LinkNode *start;
-    // start = node;
-    // while (start->next != NULL) {
-    //     start = start->next;
-    //     printf("%d, ", start->val);
-    // }
+    struct LinkNode *start;
+    start = node;
+    while (start->next !=NULL) {
+        printf("%d, ", start->val);
+        start = start->next;
+    }
 }
