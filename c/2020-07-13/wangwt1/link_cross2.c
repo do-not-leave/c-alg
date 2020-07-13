@@ -55,7 +55,7 @@ struct node *ifAcross(struct node *head1, struct node *head2)
 		
 		s1 = s1->next;
 	}
-	return s1->next;
+	return NULL;
 }
 
 void showNode(struct node *list)
@@ -85,7 +85,7 @@ int main(void)
 	pushNode(l1, p2);
 	pushNode(l1, p3);
 
-	pushNode(l2, p3);
+	pushNode(l2, p4);
 
 	printf("链表1\n");
 	showNode(l1);
@@ -93,9 +93,11 @@ int main(void)
 	showNode(l2);
 
 	t = ifAcross(l1, l2);
-	
-	printf("\n");
-	printf("是否相交:%d\n", t);
+	if (t == NULL) {
+		printf("不相交");
+	} else {
+		printf("相交:%d,元素:%d\n", t, t->data);
+	}
 
 	return 0;
 }
