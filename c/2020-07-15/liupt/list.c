@@ -135,7 +135,7 @@ int circle_list(Node* head)
 		return 0;
 	Node* tmp = head;
 	Node* tmp2 = head;
-
+	int res = 0;
 	printf("list data:");
 	while( tmp->pNext!=NULL && tmp2->pNext !=NULL && tmp2->pNext->pNext!=NULL  )
 	{
@@ -144,9 +144,21 @@ int circle_list(Node* head)
 		tmp2 = tmp2->pNext->pNext;
 		printf("%d - %d\n", tmp->data,tmp2->data);
 		if(tmp2 == tmp){
-			return 1;
+			res = 1;
 			break;
 		}
 	}
-	return 0;
+	tmp = head;
+	while( tmp->pNext!=NULL && tmp2->pNext !=NULL  )
+	{
+
+        tmp = tmp->pNext;
+		tmp2 = tmp2->pNext;
+		printf("%d - %d\n", tmp->data,tmp2->data);
+		if(tmp2 == tmp){
+			printf("入环节点 %d - %d\n", tmp->data,tmp2->data);
+			break;
+		}
+	}
+	return res;
 }
