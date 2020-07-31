@@ -42,7 +42,13 @@ int main(){
 	struct LinkNode *meeta;
 	struct LinkNode *door;
     createNode(&node1,8,4);
+	PrintNode(&node1,"sss");
+
+
+
 	meeta = IsLoop(&node1);
+	PrintNode(&node1,"sss");
+
 	if(meeta != NULL){
 		printf("有环，相遇节点：%d, ", meeta->val);
 		door = findLoopNode(&node1,meeta);
@@ -63,6 +69,8 @@ struct LinkNode *findLoopNode(struct LinkNode *node1,struct LinkNode *meet){
 	for (;tmp1->next != NULL;) {
 		tmp1 = tmp1->next;
 		tmp2 = tmp2->next;
+			printf("%d,%d ", tmp1->val,tmp2->val);
+
 		if(tmp1 == tmp2){
 			break;
 		}
@@ -90,7 +98,8 @@ void PrintNode(struct LinkNode *node,char *str) {
     struct LinkNode *start;
     start = node;
     printf("%s:", str);
-    while (start->next !=NULL) {
+	int cnt = 0;
+    while (start->next !=NULL && cnt++<100) {
         printf("%d, ", start->val);
         start = start->next;
     }

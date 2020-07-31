@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 		printf("create_list_head failed!\n");
 		return -1;
 	}
-	
 	//填充数据（添加节点） 
 	int i;
 	for(i=1; i<8; i++)

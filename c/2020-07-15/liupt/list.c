@@ -105,7 +105,6 @@ void display_list(Node* head)
 	if(NULL == head)
 		return;
 	Node* tmp = head;
-	printf("list data:");
 	while(NULL !=(tmp=tmp->pNext) && maxCount++<100)
 	{
 		printf("%d  ", tmp->data);
